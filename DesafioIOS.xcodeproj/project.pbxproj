@@ -24,6 +24,7 @@
 		A56F0AC0246F36AC00BD1CE0 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0ABF246F36AC00BD1CE0 /* UIImageView+Extensions.swift */; };
 		A56F0AC3246F3FD800BD1CE0 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AC2246F3FD800BD1CE0 /* CheckInViewController.swift */; };
 		A56F0AC5246F3FE300BD1CE0 /* CheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AC4246F3FE300BD1CE0 /* CheckInViewModel.swift */; };
+		A56F0AC7246F4BDE00BD1CE0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AC6246F4BDE00BD1CE0 /* String+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		A56F0ABF246F36AC00BD1CE0 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
 		A56F0AC2246F3FD800BD1CE0 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		A56F0AC4246F3FE300BD1CE0 /* CheckInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewModel.swift; sourceTree = "<group>"; };
+		A56F0AC6246F4BDE00BD1CE0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 			children = (
 				A56F0AB2246F0CE700BD1CE0 /* Date+Extensions.swift */,
 				A56F0AB9246F12AC00BD1CE0 /* Double+Extensions.swift */,
+				A56F0AC6246F4BDE00BD1CE0 /* String+Extensions.swift */,
 				A56F0ABF246F36AC00BD1CE0 /* UIImageView+Extensions.swift */,
 			);
 			path = Extensions;
@@ -245,6 +248,7 @@
 				A56F0AA8246EF3A700BD1CE0 /* EventListViewModel.swift in Sources */,
 				A56F0A90246EF18B00BD1CE0 /* AppDelegate.swift in Sources */,
 				A56F0AAE246EF5EC00BD1CE0 /* EventModel.swift in Sources */,
+				A56F0AC7246F4BDE00BD1CE0 /* String+Extensions.swift in Sources */,
 				A56F0AB0246F037000BD1CE0 /* EventDetailViewController.swift in Sources */,
 				A56F0A92246EF18B00BD1CE0 /* SceneDelegate.swift in Sources */,
 				A56F0AC5246F3FE300BD1CE0 /* CheckInViewModel.swift in Sources */,

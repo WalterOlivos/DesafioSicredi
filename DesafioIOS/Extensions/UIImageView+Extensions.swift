@@ -15,7 +15,13 @@ extension UIImageView {
                 if let image = UIImage(data: data) {
                     DispatchQueue.main.async {
                         self?.image = image
+                        self?.heightAnchor.constraint(equalToConstant: CGFloat(130)).isActive = true
                     }
+                }
+            } else {
+                DispatchQueue.main.async {
+                    self?.heightAnchor.constraint(equalToConstant: CGFloat(0)).isActive = true
+
                 }
             }
         }
