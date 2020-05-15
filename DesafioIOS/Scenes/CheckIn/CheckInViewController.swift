@@ -34,6 +34,7 @@ class CheckInViewController: UIViewController {
         
         nameTextField.delegate = self
         emailTextField.delegate = self
+        viewModel.delegate = self
         
         isLoading = false
         
@@ -47,7 +48,7 @@ class CheckInViewController: UIViewController {
     
     private func textsAreValid() -> Bool {
         if nameTextField.text == "" {
-            alertPopup(error: "Favor digitar nome.")
+            alertPopup(title: "Ops!", error: "Favor digitar nome.")
             return false
         }
         
@@ -55,30 +56,53 @@ class CheckInViewController: UIViewController {
             if email.isValidEmail {
                 return true
             } else {
-                alertPopup(error: "E-mail inválido.")
+                alertPopup(title: "Ops!", error: "E-mail inválido.")
                 return false
             }
         } else {
-            alertPopup(error: "Favor digitar e-mail.")
+            alertPopup(title: "Ops!", error: "Favor digitar e-mail.")
             return false
         }
     }
     
     private func checkIn() {
-        guard let name = nameTextField.text, let email = emailTextField.text else { return }
-        
-        viewModel.checkIn(name: name, email: email)
+        if let name = nameTextField.text, let email = emailTextField.text {
+            viewModel.checkIn(name: name, email: email)
+            isLoading = true
+        }
     }
     
-    private func alertPopup(error: String) {
+    private func alertPopup(title: String, error: String) {
         
-        let alert = UIAlertController(title: "Ops!", message: error, preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: title, message: error, preferredStyle: UIAlertController.Style.alert)
         
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
         
         self.present(alert, animated: true, completion: nil)
     }
     
+    private func donePopup(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { _ in
+            self.navigationController?.popToRootViewController(animated: true)
+        }))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+}
+
+extension CheckInViewController: CheckInViewModelDelegate {
+    func checkInViewModelDidCheckIn() {
+        donePopup(title: "Tudo certo!", message: "Check In feito com sucesso")
+        isLoading = false
+    }
+    
+    func checkInViewModel(didRecieve error: String) {
+        alertPopup(title: "Ops!", error: error)
+        isLoading = false
+    }
 }
 
 extension CheckInViewController {

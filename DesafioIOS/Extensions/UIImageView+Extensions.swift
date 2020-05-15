@@ -21,7 +21,6 @@ extension UIImageView {
             } else {
                 DispatchQueue.main.async {
                     self?.heightAnchor.constraint(equalToConstant: CGFloat(0)).isActive = true
-
                 }
             }
         }
