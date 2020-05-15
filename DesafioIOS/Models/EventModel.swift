@@ -9,11 +9,12 @@
 import Foundation
 
 struct EventModel {
-    let id: Int
+    let id: String
     let title: String
     let description: String
     let date: Date
     let price: Double
+    let image: URL
 }
 
 extension EventModel: Decodable {
@@ -23,5 +24,6 @@ extension EventModel: Decodable {
         case description = "description"
         case date = "date"
         case price = "price"
+        case image = "image"
     }
 }

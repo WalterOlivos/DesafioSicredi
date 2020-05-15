@@ -22,6 +22,7 @@ class EventListViewModel {
         NetworkManager.loadEventList { events in
             guard let events = events else {
                 self.events = []
+                self.delegate?.eventListViewModelDidFinishApiRequest()
                 return
             }
             

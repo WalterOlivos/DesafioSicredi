@@ -26,9 +26,16 @@ struct NetworkManager {
                 completion(nil)
                 return
             }
-            let eventList = try? JSONDecoder().decode([EventModel].self, from: data)
-            completion(eventList)
+            do {
+                let eventList = try JSONDecoder().decode([EventModel].self, from: data)
+                completion(eventList)
+            } catch {
+                print(error.localizedDescription)
+                completion(nil)
+            }
         }
     }
+    
+    
     
 }
