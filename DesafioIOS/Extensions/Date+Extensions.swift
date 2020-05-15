@@ -17,4 +17,10 @@ extension Date {
         return dataFormatter.string(from: self)
     }
     
+    func toStringDayMonth() -> String{
+        let dataFormatter = DateFormatter()
+        dataFormatter.dateFormat = "dd/MM"
+
+        return dataFormatter.string(from: self)
+    }
 }

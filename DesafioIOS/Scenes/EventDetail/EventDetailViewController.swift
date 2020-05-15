@@ -10,6 +10,8 @@ import UIKit
 
 class EventDetailViewController: UIViewController {
 
+    private var event: EventModel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,3 +30,16 @@ class EventDetailViewController: UIViewController {
     */
 
 }
+
+extension EventDetailViewController {
+    static func instantiate(event: EventModel) -> EventDetailViewController {
+        guard let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "EventDetailViewController") as? EventDetailViewController else {
+            fatalError("Unexpectedly failed getting CharacterViewController from Storyboard")
+        }
+        
+        vc.event = event
+        
+        return vc
+    }
+}
+

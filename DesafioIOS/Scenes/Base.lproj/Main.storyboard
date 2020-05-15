@@ -23,7 +23,7 @@
             </objects>
             <point key="canvasLocation" x="-1351" y="-21"/>
         </scene>
-        <!--Event List-->
+        <!--Lista de Eventos-->
         <scene sceneID="CXr-8x-ux7">
             <objects>
                 <viewController modalPresentationStyle="fullScreen" id="3PA-vs-1fE" customClass="EventListViewController" customModule="DesafioIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -133,10 +133,11 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uF6-Y7-mBQ"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Event List" id="40n-73-DuR"/>
+                    <navigationItem key="navigationItem" title="Lista de Eventos" id="40n-73-DuR"/>
                     <connections>
                         <outlet property="loadIndicator" destination="k9A-t2-tVm" id="9Dr-ic-z0V"/>
                         <outlet property="tableView" destination="giP-nX-hSy" id="BeF-qD-Gfk"/>
+                        <segue destination="BYZ-38-t0r" kind="show" id="k5y-iz-KPE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTq-E3-37v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

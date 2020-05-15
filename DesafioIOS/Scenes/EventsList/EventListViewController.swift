@@ -51,16 +51,42 @@ extension EventListViewController: EventListViewModelDelegate {
 extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.events.count
+        if viewModel.events.isEmpty {
+            return 1
+        } else {
+            return viewModel.events.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        if viewModel.events.isEmpty {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "noEventsCell") else { return UITableViewCell() }
+            
+            return cell
+            
+        } else {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "eventCell", for: indexPath) as? EventListTableViewCell else { return UITableViewCell() }
+            
+            let event = viewModel.events[indexPath.row]
+            
+            cell.eventName.text = event.title
+            cell.eventDate.text = event.date.toStringDayMonth()
+            cell.eventPrice.text = "R$ \(event.price.toCurrencyString(floating: 2))"
+            
+            return cell
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-//        navigationController?.performSegue(withIdentifier: "showEventInfoSegue", sender: self)
-//        navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
+        if viewModel.events.isEmpty {
+            tableView.deselectRow(at: indexPath, animated: false)
+            isLoading = true
+            viewModel.fetchEvents()
+        } else {
+            tableView.deselectRow(at: indexPath, animated: false)
+
+            let eventDetailVC = EventDetailViewController.instantiate(event: viewModel.events[indexPath.row])
+            navigationController?.pushViewController(eventDetailVC, animated: true)
+        }
     }
 }
