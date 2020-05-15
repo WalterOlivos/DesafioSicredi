@@ -8,11 +8,11 @@
 
 import Foundation
 
-class NetworkManager {
+struct NetworkManager {
     
     static let eventListUrl = URL(string: "http://5b840ba5db24a100142dcd8c.mockapi.io/api/events")!
     
-    func load(url: URL, withCompletion completion: @escaping (Data?) -> Void) {
+    static func load(url: URL, withCompletion completion: @escaping (Data?) -> Void) {
         let session = URLSession(configuration: .ephemeral, delegate: nil, delegateQueue: .main)
         let task = session.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
             completion(data)
@@ -20,7 +20,7 @@ class NetworkManager {
         task.resume()
     }
     
-    func loadEventList(completion: @escaping ([EventModel]?) -> Void) {
+    static func loadEventList(completion: @escaping ([EventModel]?) -> Void) {
         load(url: NetworkManager.eventListUrl) { data in
             guard let data = data else {
                 completion(nil)
