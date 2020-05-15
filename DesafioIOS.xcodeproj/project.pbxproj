@@ -16,6 +16,7 @@
 		A56F0AA8246EF3A700BD1CE0 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AA7246EF3A700BD1CE0 /* EventListViewModel.swift */; };
 		A56F0AAB246EF49000BD1CE0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AAA246EF49000BD1CE0 /* NetworkManager.swift */; };
 		A56F0AAE246EF5EC00BD1CE0 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AAD246EF5EC00BD1CE0 /* EventModel.swift */; };
+		A56F0AB0246F037000BD1CE0 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AAF246F037000BD1CE0 /* EventDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A56F0AA7246EF3A700BD1CE0 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
 		A56F0AAA246EF49000BD1CE0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A56F0AAD246EF5EC00BD1CE0 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
+		A56F0AAF246F037000BD1CE0 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		A56F0AA5246EF36400BD1CE0 /* EventDetail */ = {
 			isa = PBXGroup;
 			children = (
+				A56F0AAF246F037000BD1CE0 /* EventDetailViewController.swift */,
 			);
 			path = EventDetail;
 			sourceTree = "<group>";
@@ -192,6 +195,7 @@
 				A56F0AA8246EF3A700BD1CE0 /* EventListViewModel.swift in Sources */,
 				A56F0A90246EF18B00BD1CE0 /* AppDelegate.swift in Sources */,
 				A56F0AAE246EF5EC00BD1CE0 /* EventModel.swift in Sources */,
+				A56F0AB0246F037000BD1CE0 /* EventDetailViewController.swift in Sources */,
 				A56F0A92246EF18B00BD1CE0 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
