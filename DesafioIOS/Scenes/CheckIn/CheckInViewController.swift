@@ -9,26 +9,76 @@
 import UIKit
 
 class CheckInViewController: UIViewController {
-
+    
+    @IBOutlet weak var nameTextField: UITextField!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var checkInButton: UIButton!
+    
     var viewModel = CheckInViewModel()
+    
+    private var isLoading: Bool = false {
+        didSet {
+            if isLoading {
+                loadIndicator.startAnimating()
+                checkInButton.isHidden = true
+            } else {
+                loadIndicator.stopAnimating()
+                checkInButton.isHidden = false
+            }
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        
+        isLoading = false
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func didTapCheckInButton(_ sender: UIButton) {
+        if textsAreValid() {
+            checkIn()
+        }
     }
-    */
-
+    
+    private func textsAreValid() -> Bool {
+        if nameTextField.text == "" {
+            alertPopup(error: "Favor digitar nome.")
+            return false
+        }
+        
+        if let email = emailTextField.text {
+            if email.isValidEmail {
+                return true
+            } else {
+                alertPopup(error: "E-mail inválido.")
+                return false
+            }
+        } else {
+            alertPopup(error: "Favor digitar e-mail.")
+            return false
+        }
+    }
+    
+    private func checkIn() {
+        guard let name = nameTextField.text, let email = emailTextField.text else { return }
+        
+        viewModel.checkIn(name: name, email: email)
+    }
+    
+    private func alertPopup(error: String) {
+        
+        let alert = UIAlertController(title: "Ops!", message: error, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }
 
 extension CheckInViewController {
@@ -45,4 +95,15 @@ extension CheckInViewController {
 
 extension CheckInViewController: UITextFieldDelegate {
     
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == nameTextField {
+            emailTextField.becomeFirstResponder()
+        } else {
+            view.endEditing(true)
+            if textsAreValid() {
+                checkIn()
+            }
+        }
+        return false
+    }
 }
