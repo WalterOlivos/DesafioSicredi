@@ -35,21 +35,82 @@
                                 <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noEventsCell" rowHeight="100" id="Y8C-Tq-cI3">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="noEventsCell" id="Y8C-Tq-cI3">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Y8C-Tq-cI3" id="Ser-hW-yV8">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="76"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Não foi encontrado nenhum evento" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N0v-fS-sFE">
+                                                    <rect key="frame" x="23" y="11" width="274" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tentar Novamente" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCK-Lt-qAw">
+                                                    <rect key="frame" x="85" y="40" width="150" height="25"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="150" id="3wO-6v-Mll"/>
+                                                        <constraint firstAttribute="height" constant="25" id="ff5-gp-AeX"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="LCK-Lt-qAw" firstAttribute="top" secondItem="N0v-fS-sFE" secondAttribute="bottom" constant="8" id="1Io-dd-Xwo"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="LCK-Lt-qAw" secondAttribute="bottom" id="KDa-gO-N0U"/>
+                                                <constraint firstItem="N0v-fS-sFE" firstAttribute="top" secondItem="Ser-hW-yV8" secondAttribute="topMargin" id="Z9u-lt-xNn"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="N0v-fS-sFE" secondAttribute="trailing" constant="8" id="l1w-1y-6RK"/>
+                                                <constraint firstItem="N0v-fS-sFE" firstAttribute="leading" secondItem="Ser-hW-yV8" secondAttribute="leadingMargin" constant="8" id="o3Z-lV-OTG"/>
+                                                <constraint firstItem="LCK-Lt-qAw" firstAttribute="centerX" secondItem="Ser-hW-yV8" secondAttribute="centerX" id="vez-GY-WD0"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" rowHeight="100" id="bAc-Vp-mR5">
-                                        <rect key="frame" x="0.0" y="128" width="320" height="100"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="eventCell" id="bAc-Vp-mR5" customClass="EventListTableViewCell" customModule="DesafioIOS" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="104" width="320" height="81.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bAc-Vp-mR5" id="7aB-Z8-cVQ">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="81.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="#NomeEvento" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dpk-sv-fr6">
+                                                    <rect key="frame" x="15" y="19" width="109" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="R$ 00,00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="giH-Cv-4A7">
+                                                    <rect key="frame" x="234" y="19" width="71" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="#DataEvento" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f1y-Ya-0zf">
+                                                    <rect key="frame" x="15" y="44" width="88.5" height="18.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="dpk-sv-fr6" firstAttribute="top" secondItem="7aB-Z8-cVQ" secondAttribute="topMargin" constant="8" id="0Aj-XP-jfe"/>
+                                                <constraint firstItem="giH-Cv-4A7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dpk-sv-fr6" secondAttribute="trailing" constant="16" id="AOf-mw-Ws3"/>
+                                                <constraint firstItem="dpk-sv-fr6" firstAttribute="leading" secondItem="7aB-Z8-cVQ" secondAttribute="leadingMargin" id="N4L-d0-gx3"/>
+                                                <constraint firstItem="f1y-Ya-0zf" firstAttribute="top" secondItem="dpk-sv-fr6" secondAttribute="bottom" constant="4" id="S1U-PX-a6n"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="f1y-Ya-0zf" secondAttribute="bottom" constant="8" id="c7E-85-wBt"/>
+                                                <constraint firstItem="giH-Cv-4A7" firstAttribute="trailing" secondItem="7aB-Z8-cVQ" secondAttribute="trailingMargin" id="d1p-ni-LJL"/>
+                                                <constraint firstItem="f1y-Ya-0zf" firstAttribute="leading" secondItem="7aB-Z8-cVQ" secondAttribute="leadingMargin" id="e7n-ZV-l9Q"/>
+                                                <constraint firstItem="giH-Cv-4A7" firstAttribute="top" secondItem="7aB-Z8-cVQ" secondAttribute="topMargin" constant="8" id="g5q-Ag-z9m"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventDate" destination="f1y-Ya-0zf" id="BBX-pg-GFs"/>
+                                            <outlet property="eventName" destination="dpk-sv-fr6" id="SM3-58-VOp"/>
+                                            <outlet property="eventPrice" destination="giH-Cv-4A7" id="UW7-v0-TVc"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -82,10 +143,10 @@
             </objects>
             <point key="canvasLocation" x="-349.27536231884062" y="-21.428571428571427"/>
         </scene>
-        <!--View Controller-->
+        <!--Event Detail View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="ViewController" customModule="DesafioIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventDetailViewController" modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="EventDetailViewController" customModule="DesafioIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
