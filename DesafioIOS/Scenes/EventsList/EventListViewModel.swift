@@ -9,7 +9,8 @@
 import Foundation
 
 protocol EventListViewModelDelegate: class {
-    func eventListViewModelDidFinishApiRequest()
+    func eventListViewModelDidGetEvents()
+    func eventListViewModel(didRecieve error: String)
 }
 
 class EventListViewModel {
@@ -19,15 +20,16 @@ class EventListViewModel {
     var events: [EventModel] = []
     
     func fetchEvents() {
-        NetworkManager.loadEventList { events in
-            guard let events = events else {
-                self.events = []
-                self.delegate?.eventListViewModelDidFinishApiRequest()
+        NetworkManager.loadEventList { events, error  in
+            guard let error = error else {
+                if let events = events {
+                    self.events = events
+                }
+                self.delegate?.eventListViewModelDidGetEvents()
                 return
             }
             
-            self.events = events
-            self.delegate?.eventListViewModelDidFinishApiRequest()
+            self.delegate?.eventListViewModel(didRecieve: error)
         }
     }
 }

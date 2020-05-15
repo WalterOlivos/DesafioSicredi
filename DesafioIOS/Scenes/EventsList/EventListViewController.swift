@@ -34,17 +34,36 @@ class EventListViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
         viewModel.fetchEvents()
         isLoading = true
+    }
+    
+    private func alertPopup(error: String) {
         
+        let alert = UIAlertController(title: "Ops!", message: error, preferredStyle: UIAlertController.Style.alert)
+        
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
 
 extension EventListViewController: EventListViewModelDelegate {
-    func eventListViewModelDidFinishApiRequest() {
+    func eventListViewModelDidGetEvents() {
         isLoading = false
         tableView.reloadData()
+    }
+    
+    func eventListViewModel(didRecieve error: String) {
+        isLoading = false
+        tableView.reloadData()
+        alertPopup(error: error)
     }
 }
 

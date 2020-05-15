@@ -14,15 +14,17 @@ struct NetworkManager {
     
     static let checkInURL = URL(string: "http://5b840ba5db24a100142dcd8c.mockapi.io/api/checkin")!
     
-    static func load(url: URL, withCompletion completion: @escaping (Data?) -> Void) {
+    static let defaultError: String = "Ocorreu um problema, tente novamente."
+    
+    static func load(url: URL, withCompletion completion: @escaping (Data?, Error?) -> Void) {
         let session = URLSession(configuration: .ephemeral, delegate: nil, delegateQueue: .main)
         let task = session.dataTask(with: url, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
-            completion(data)
+            completion(data, error)
         })
         task.resume()
     }
     
-    static func post(url: URL, body: Data, withCompletion completion: @escaping (Data?) -> Void) {
+    static func post(url: URL, body: Data, withCompletion completion: @escaping (Data?, Error?) -> Void) {
         
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -30,7 +32,7 @@ struct NetworkManager {
 
        let session = URLSession(configuration: .ephemeral, delegate: nil, delegateQueue: .main)
         let task = session.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) -> Void in
-            completion(data)
+            completion(data, error)
         })
         task.resume()
     }
@@ -39,29 +41,39 @@ struct NetworkManager {
         do {
             let jsonData = try JSONEncoder().encode(body)
             
-            post(url: checkInURL, body: jsonData) { data in
-                
-                print(data)
+            post(url: checkInURL, body: jsonData) { data, error in
+                guard let error = error else {
+                    completion(nil)
+                    return
+                }
+                completion(error.localizedDescription)
+                return
             }
         } catch {
             print(error.localizedDescription)
-            completion(nil)
+            completion(defaultError)
         }
     }
     
-    static func loadEventList(completion: @escaping ([EventModel]?) -> Void) {
-        load(url: eventListUrl) { data in
-            guard let data = data else {
-                completion(nil)
-                return
+    static func loadEventList(completion: @escaping ([EventModel]?, String?) -> Void) {
+        load(url: eventListUrl) { data, error in
+            guard let error = error else {
+                guard let data = data else {
+                    completion(nil, defaultError)
+                    return
+                }
+                do {
+                    let eventList = try JSONDecoder().decode([EventModel].self, from: data)
+                    completion(eventList, nil)
+                    return
+                } catch {
+                    print(error.localizedDescription)
+                    completion(nil, defaultError)
+                    return
+                }
             }
-            do {
-                let eventList = try JSONDecoder().decode([EventModel].self, from: data)
-                completion(eventList)
-            } catch {
-                print(error.localizedDescription)
-                completion(nil)
-            }
+            completion(nil, error.localizedDescription)
+            return
         }
     }
     
