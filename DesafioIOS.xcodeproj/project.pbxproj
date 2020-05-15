@@ -17,6 +17,9 @@
 		A56F0AAB246EF49000BD1CE0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AAA246EF49000BD1CE0 /* NetworkManager.swift */; };
 		A56F0AAE246EF5EC00BD1CE0 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AAD246EF5EC00BD1CE0 /* EventModel.swift */; };
 		A56F0AB0246F037000BD1CE0 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AAF246F037000BD1CE0 /* EventDetailViewController.swift */; };
+		A56F0AB3246F0CE700BD1CE0 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AB2246F0CE700BD1CE0 /* Date+Extensions.swift */; };
+		A56F0AB6246F0F2700BD1CE0 /* EventListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AB5246F0F2700BD1CE0 /* EventListTableViewCell.swift */; };
+		A56F0ABA246F12AC00BD1CE0 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AB9246F12AC00BD1CE0 /* Double+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +35,9 @@
 		A56F0AAA246EF49000BD1CE0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		A56F0AAD246EF5EC00BD1CE0 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		A56F0AAF246F037000BD1CE0 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
+		A56F0AB2246F0CE700BD1CE0 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		A56F0AB5246F0F2700BD1CE0 /* EventListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTableViewCell.swift; sourceTree = "<group>"; };
+		A56F0AB9246F12AC00BD1CE0 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,8 +74,10 @@
 				A56F0A91246EF18B00BD1CE0 /* SceneDelegate.swift */,
 				A56F0A9A246EF19500BD1CE0 /* LaunchScreen.storyboard */,
 				A56F0AA3246EF34D00BD1CE0 /* Scenes */,
+				A56F0AB4246F0EF700BD1CE0 /* Cells */,
 				A56F0AAC246EF5BC00BD1CE0 /* Models */,
 				A56F0AA9246EF3F300BD1CE0 /* Networking */,
+				A56F0AB1246F0CCF00BD1CE0 /* Extensions */,
 				A56F0A98246EF19500BD1CE0 /* Assets.xcassets */,
 				A56F0A9D246EF19500BD1CE0 /* Info.plist */,
 			);
@@ -117,6 +125,23 @@
 				A56F0AAD246EF5EC00BD1CE0 /* EventModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		A56F0AB1246F0CCF00BD1CE0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A56F0AB2246F0CE700BD1CE0 /* Date+Extensions.swift */,
+				A56F0AB9246F12AC00BD1CE0 /* Double+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A56F0AB4246F0EF700BD1CE0 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				A56F0AB5246F0F2700BD1CE0 /* EventListTableViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -191,7 +216,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A56F0A94246EF18B00BD1CE0 /* EventListViewController.swift in Sources */,
+				A56F0AB3246F0CE700BD1CE0 /* Date+Extensions.swift in Sources */,
 				A56F0AAB246EF49000BD1CE0 /* NetworkManager.swift in Sources */,
+				A56F0AB6246F0F2700BD1CE0 /* EventListTableViewCell.swift in Sources */,
+				A56F0ABA246F12AC00BD1CE0 /* Double+Extensions.swift in Sources */,
 				A56F0AA8246EF3A700BD1CE0 /* EventListViewModel.swift in Sources */,
 				A56F0A90246EF18B00BD1CE0 /* AppDelegate.swift in Sources */,
 				A56F0AAE246EF5EC00BD1CE0 /* EventModel.swift in Sources */,
