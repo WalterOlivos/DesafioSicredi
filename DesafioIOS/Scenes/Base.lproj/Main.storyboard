@@ -57,7 +57,7 @@
                                     <outlet property="delegate" destination="3PA-vs-1fE" id="pNs-hh-1BF"/>
                                 </connections>
                             </tableView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="k9A-t2-tVm">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="k9A-t2-tVm">
                                 <rect key="frame" x="150" y="274" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
@@ -76,7 +76,6 @@
                     <connections>
                         <outlet property="loadIndicator" destination="k9A-t2-tVm" id="9Dr-ic-z0V"/>
                         <outlet property="tableView" destination="giP-nX-hSy" id="BeF-qD-Gfk"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="showEventInfoSegue" id="t00-Q6-tZ9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oTq-E3-37v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

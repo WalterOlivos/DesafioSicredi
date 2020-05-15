@@ -16,9 +16,11 @@ class EventListViewController: UIViewController {
     private var isLoading: Bool = false {
         didSet {
             if isLoading {
-                
+                loadIndicator.startAnimating()
+                tableView.isHidden = true
             } else {
-                
+                loadIndicator.stopAnimating()
+                tableView.isHidden = false
             }
         }
     }
@@ -28,13 +30,20 @@ class EventListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        viewModel.delegate = self
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        viewModel.fetchEvents()
+        isLoading = true
+        
     }
     
 }
 
 extension EventListViewController: EventListViewModelDelegate {
     func eventListViewModelDidFinishApiRequest() {
-        
+        isLoading = false
         tableView.reloadData()
     }
 }
@@ -42,7 +51,7 @@ extension EventListViewController: EventListViewModelDelegate {
 extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return viewModel.events.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -51,5 +60,7 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+//        navigationController?.performSegue(withIdentifier: "showEventInfoSegue", sender: self)
+//        navigationController?.pushViewController(<#T##viewController: UIViewController##UIViewController#>, animated: <#T##Bool#>)
     }
 }

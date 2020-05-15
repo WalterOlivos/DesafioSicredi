@@ -14,4 +14,19 @@ protocol EventListViewModelDelegate: class {
 
 class EventListViewModel {
     
+    weak var delegate: EventListViewModelDelegate?
+    
+    var events: [EventModel] = []
+    
+    func fetchEvents() {
+        NetworkManager.loadEventList { events in
+            guard let events = events else {
+                self.events = []
+                return
+            }
+            
+            self.events = events
+            self.delegate?.eventListViewModelDidFinishApiRequest()
+        }
+    }
 }
