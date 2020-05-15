@@ -202,6 +202,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="KqZ-oV-Qdh"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="FAw-GF-S8W" id="UD9-qh-AkO"/>
+                        <outlet property="descriptionLabel" destination="SbT-Iz-W7t" id="YWd-w8-zPj"/>
+                        <outlet property="eventImageView" destination="lQP-sp-fDL" id="9DZ-nZ-SYg"/>
+                        <outlet property="priceLabel" destination="alG-aj-ENl" id="d5R-f6-FQQ"/>
+                        <outlet property="titleLabel" destination="sRn-KK-YFg" id="f1l-aU-H4i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

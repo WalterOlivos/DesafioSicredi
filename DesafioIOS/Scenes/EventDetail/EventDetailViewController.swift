@@ -10,12 +10,31 @@ import UIKit
 
 class EventDetailViewController: UIViewController {
     
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var eventImageView: UIImageView!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    
+    @IBOutlet weak var priceLabel: UILabel!
     private var viewModel = EventDetailViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        setupView()
+    }
+    
+    private func setupView() {
+        guard let event = viewModel.event else {
+            return
+        }
+        
+        titleLabel.text = event.title
+        dateLabel.text = event.date.toStringDayMonth()
+        priceLabel.text = "R$ \(event.price.toCurrencyString(floating: 2))"
+        descriptionLabel.text = event.description
+        
+        eventImageView.load(url: event.image)
     }
 }
 
