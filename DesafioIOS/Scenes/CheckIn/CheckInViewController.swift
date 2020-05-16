@@ -40,7 +40,12 @@ class CheckInViewController: BaseViewController {
         
     }
     
+    @IBAction func tap(_ sender: UITapGestureRecognizer) {
+        view.endEditing(true)
+    }
+    
     @IBAction func didTapCheckInButton(_ sender: UIButton) {
+        view.endEditing(true)
         if textsAreValid() {
             checkIn()
         }
