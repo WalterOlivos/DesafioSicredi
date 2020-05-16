@@ -25,6 +25,7 @@
 		A56F0AC3246F3FD800BD1CE0 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AC2246F3FD800BD1CE0 /* CheckInViewController.swift */; };
 		A56F0AC5246F3FE300BD1CE0 /* CheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AC4246F3FE300BD1CE0 /* CheckInViewModel.swift */; };
 		A56F0AC7246F4BDE00BD1CE0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AC6246F4BDE00BD1CE0 /* String+Extensions.swift */; };
+		A56F0ACA246F62F100BD1CE0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AC9246F62F100BD1CE0 /* BaseViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		A56F0AC2246F3FD800BD1CE0 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		A56F0AC4246F3FE300BD1CE0 /* CheckInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewModel.swift; sourceTree = "<group>"; };
 		A56F0AC6246F4BDE00BD1CE0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		A56F0AC9246F62F100BD1CE0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				A56F0AC1246F3FBC00BD1CE0 /* CheckIn */,
 				A56F0AA5246EF36400BD1CE0 /* EventDetail */,
 				A56F0AA4246EF35700BD1CE0 /* EventsList */,
+				A56F0AC8246F62A000BD1CE0 /* Shared */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -165,6 +168,14 @@
 				A56F0AC4246F3FE300BD1CE0 /* CheckInViewModel.swift */,
 			);
 			path = CheckIn;
+			sourceTree = "<group>";
+		};
+		A56F0AC8246F62A000BD1CE0 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A56F0AC9246F62F100BD1CE0 /* BaseViewController.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -251,6 +262,7 @@
 				A56F0AC7246F4BDE00BD1CE0 /* String+Extensions.swift in Sources */,
 				A56F0AB0246F037000BD1CE0 /* EventDetailViewController.swift in Sources */,
 				A56F0A92246EF18B00BD1CE0 /* SceneDelegate.swift in Sources */,
+				A56F0ACA246F62F100BD1CE0 /* BaseViewController.swift in Sources */,
 				A56F0AC5246F3FE300BD1CE0 /* CheckInViewModel.swift in Sources */,
 				A56F0AC3246F3FD800BD1CE0 /* CheckInViewController.swift in Sources */,
 			);

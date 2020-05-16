@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventListViewController: UIViewController {
+class EventListViewController: BaseViewController {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
@@ -43,15 +43,6 @@ class EventListViewController: UIViewController {
         isLoading = true
     }
     
-    private func alertPopup(error: String) {
-        
-        let alert = UIAlertController(title: "Ops!", message: error, preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
 }
 
 extension EventListViewController: EventListViewModelDelegate {
@@ -63,7 +54,7 @@ extension EventListViewController: EventListViewModelDelegate {
     func eventListViewModel(didRecieve error: String) {
         isLoading = false
         tableView.reloadData()
-        alertPopup(error: error)
+        alertPopup(title: "Ops!", error: error)
     }
 }
 

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventDetailViewController: UIViewController {
+class EventDetailViewController: BaseViewController {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var eventImageView: UIImageView!

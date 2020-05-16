@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CheckInViewController: UIViewController {
+class CheckInViewController: BaseViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -72,30 +72,11 @@ class CheckInViewController: UIViewController {
         }
     }
     
-    private func alertPopup(title: String, error: String) {
-        
-        let alert = UIAlertController(title: title, message: error, preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
-    private func donePopup(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: { _ in
-            self.navigationController?.popToRootViewController(animated: true)
-        }))
-        
-        self.present(alert, animated: true, completion: nil)
-    }
-    
 }
 
 extension CheckInViewController: CheckInViewModelDelegate {
     func checkInViewModelDidCheckIn() {
-        donePopup(title: "Tudo certo!", message: "Check In feito com sucesso")
+        donePopup(title: "Tudo certo!", message: "Check In feito com sucesso", returnToRoot: true)
         isLoading = false
     }
     
