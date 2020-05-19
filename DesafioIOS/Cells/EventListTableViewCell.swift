@@ -10,9 +10,9 @@ import UIKit
 
 class EventListTableViewCell: UITableViewCell {
     
-    @IBOutlet weak var eventName: UILabel!
-    @IBOutlet weak var eventDate: UILabel!
-    @IBOutlet weak var eventPrice: UILabel!
+    @IBOutlet private weak var eventName: UILabel!
+    @IBOutlet private weak var eventDate: UILabel!
+    @IBOutlet private weak var eventPrice: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,6 +26,14 @@ class EventListTableViewCell: UITableViewCell {
         eventName.text = nil
         eventDate.text = nil
         eventPrice.text = nil
+    }
+    
+    func load(_ event: EventModel) {
+        
+        eventName.text = event.title
+        eventDate.text = event.date.toStringDayMonth()
+        eventPrice.text = "R$ \(event.price.toCurrencyString(floating: 2))"
+        
     }
 
 }

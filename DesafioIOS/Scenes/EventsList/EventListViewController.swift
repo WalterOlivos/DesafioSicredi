@@ -79,9 +79,7 @@ extension EventListViewController: UITableViewDelegate, UITableViewDataSource {
             
             let event = viewModel.events[indexPath.row]
             
-            cell.eventName.text = event.title
-            cell.eventDate.text = event.date.toStringDayMonth()
-            cell.eventPrice.text = "R$ \(event.price.toCurrencyString(floating: 2))"
+            cell.load(event)
             
             return cell
         }
