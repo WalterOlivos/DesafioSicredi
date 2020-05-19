@@ -14,18 +14,21 @@
 		A56F0A99246EF19500BD1CE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A56F0A98246EF19500BD1CE0 /* Assets.xcassets */; };
 		A56F0A9C246EF19500BD1CE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A56F0A9A246EF19500BD1CE0 /* LaunchScreen.storyboard */; };
 		A56F0AA8246EF3A700BD1CE0 /* EventListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AA7246EF3A700BD1CE0 /* EventListViewModel.swift */; };
-		A56F0AAB246EF49000BD1CE0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AAA246EF49000BD1CE0 /* NetworkManager.swift */; };
+		A56F0AAB246EF49000BD1CE0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AAA246EF49000BD1CE0 /* APIManager.swift */; };
 		A56F0AAE246EF5EC00BD1CE0 /* EventModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AAD246EF5EC00BD1CE0 /* EventModel.swift */; };
 		A56F0AB0246F037000BD1CE0 /* EventDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AAF246F037000BD1CE0 /* EventDetailViewController.swift */; };
-		A56F0AB3246F0CE700BD1CE0 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AB2246F0CE700BD1CE0 /* Date+Extensions.swift */; };
+		A56F0AB3246F0CE700BD1CE0 /* Date+ToString.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AB2246F0CE700BD1CE0 /* Date+ToString.swift */; };
 		A56F0AB6246F0F2700BD1CE0 /* EventListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AB5246F0F2700BD1CE0 /* EventListTableViewCell.swift */; };
-		A56F0ABA246F12AC00BD1CE0 /* Double+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AB9246F12AC00BD1CE0 /* Double+Extensions.swift */; };
+		A56F0ABA246F12AC00BD1CE0 /* Double+ToCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AB9246F12AC00BD1CE0 /* Double+ToCurrency.swift */; };
 		A56F0ABC246F1DA700BD1CE0 /* CheckInModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0ABB246F1DA700BD1CE0 /* CheckInModel.swift */; };
-		A56F0AC0246F36AC00BD1CE0 /* UIImageView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0ABF246F36AC00BD1CE0 /* UIImageView+Extensions.swift */; };
+		A56F0AC0246F36AC00BD1CE0 /* UIImageView+LoadURL.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0ABF246F36AC00BD1CE0 /* UIImageView+LoadURL.swift */; };
 		A56F0AC3246F3FD800BD1CE0 /* CheckInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AC2246F3FD800BD1CE0 /* CheckInViewController.swift */; };
 		A56F0AC5246F3FE300BD1CE0 /* CheckInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AC4246F3FE300BD1CE0 /* CheckInViewModel.swift */; };
-		A56F0AC7246F4BDE00BD1CE0 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AC6246F4BDE00BD1CE0 /* String+Extensions.swift */; };
+		A56F0AC7246F4BDE00BD1CE0 /* String+ValidEmail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AC6246F4BDE00BD1CE0 /* String+ValidEmail.swift */; };
 		A56F0ACA246F62F100BD1CE0 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0AC9246F62F100BD1CE0 /* BaseViewController.swift */; };
+		A56F0ACC2474654C00BD1CE0 /* CheckInService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0ACB2474654C00BD1CE0 /* CheckInService.swift */; };
+		A56F0ACE247466FD00BD1CE0 /* EventListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0ACD247466FD00BD1CE0 /* EventListService.swift */; };
+		A56F0AD02474675100BD1CE0 /* APIMethods.swift in Sources */ = {isa = PBXBuildFile; fileRef = A56F0ACF2474675100BD1CE0 /* APIMethods.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,18 +41,21 @@
 		A56F0A9B246EF19500BD1CE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A56F0A9D246EF19500BD1CE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A56F0AA7246EF3A700BD1CE0 /* EventListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListViewModel.swift; sourceTree = "<group>"; };
-		A56F0AAA246EF49000BD1CE0 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		A56F0AAA246EF49000BD1CE0 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		A56F0AAD246EF5EC00BD1CE0 /* EventModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventModel.swift; sourceTree = "<group>"; };
 		A56F0AAF246F037000BD1CE0 /* EventDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailViewController.swift; sourceTree = "<group>"; };
-		A56F0AB2246F0CE700BD1CE0 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		A56F0AB2246F0CE700BD1CE0 /* Date+ToString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+ToString.swift"; sourceTree = "<group>"; };
 		A56F0AB5246F0F2700BD1CE0 /* EventListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListTableViewCell.swift; sourceTree = "<group>"; };
-		A56F0AB9246F12AC00BD1CE0 /* Double+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extensions.swift"; sourceTree = "<group>"; };
+		A56F0AB9246F12AC00BD1CE0 /* Double+ToCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+ToCurrency.swift"; sourceTree = "<group>"; };
 		A56F0ABB246F1DA700BD1CE0 /* CheckInModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInModel.swift; sourceTree = "<group>"; };
-		A56F0ABF246F36AC00BD1CE0 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
+		A56F0ABF246F36AC00BD1CE0 /* UIImageView+LoadURL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+LoadURL.swift"; sourceTree = "<group>"; };
 		A56F0AC2246F3FD800BD1CE0 /* CheckInViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewController.swift; sourceTree = "<group>"; };
 		A56F0AC4246F3FE300BD1CE0 /* CheckInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInViewModel.swift; sourceTree = "<group>"; };
-		A56F0AC6246F4BDE00BD1CE0 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
+		A56F0AC6246F4BDE00BD1CE0 /* String+ValidEmail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+ValidEmail.swift"; sourceTree = "<group>"; };
 		A56F0AC9246F62F100BD1CE0 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A56F0ACB2474654C00BD1CE0 /* CheckInService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckInService.swift; sourceTree = "<group>"; };
+		A56F0ACD247466FD00BD1CE0 /* EventListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventListService.swift; sourceTree = "<group>"; };
+		A56F0ACF2474675100BD1CE0 /* APIMethods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIMethods.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 			children = (
 				A56F0A93246EF18B00BD1CE0 /* EventListViewController.swift */,
 				A56F0AA7246EF3A700BD1CE0 /* EventListViewModel.swift */,
+				A56F0ACD247466FD00BD1CE0 /* EventListService.swift */,
 			);
 			path = EventsList;
 			sourceTree = "<group>";
@@ -128,7 +135,8 @@
 		A56F0AA9246EF3F300BD1CE0 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
-				A56F0AAA246EF49000BD1CE0 /* NetworkManager.swift */,
+				A56F0AAA246EF49000BD1CE0 /* APIManager.swift */,
+				A56F0ACF2474675100BD1CE0 /* APIMethods.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -145,10 +153,10 @@
 		A56F0AB1246F0CCF00BD1CE0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				A56F0AB2246F0CE700BD1CE0 /* Date+Extensions.swift */,
-				A56F0AB9246F12AC00BD1CE0 /* Double+Extensions.swift */,
-				A56F0AC6246F4BDE00BD1CE0 /* String+Extensions.swift */,
-				A56F0ABF246F36AC00BD1CE0 /* UIImageView+Extensions.swift */,
+				A56F0AB2246F0CE700BD1CE0 /* Date+ToString.swift */,
+				A56F0AB9246F12AC00BD1CE0 /* Double+ToCurrency.swift */,
+				A56F0AC6246F4BDE00BD1CE0 /* String+ValidEmail.swift */,
+				A56F0ABF246F36AC00BD1CE0 /* UIImageView+LoadURL.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -166,6 +174,7 @@
 			children = (
 				A56F0AC2246F3FD800BD1CE0 /* CheckInViewController.swift */,
 				A56F0AC4246F3FE300BD1CE0 /* CheckInViewModel.swift */,
+				A56F0ACB2474654C00BD1CE0 /* CheckInService.swift */,
 			);
 			path = CheckIn;
 			sourceTree = "<group>";
@@ -249,17 +258,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A56F0AC0246F36AC00BD1CE0 /* UIImageView+Extensions.swift in Sources */,
+				A56F0ACE247466FD00BD1CE0 /* EventListService.swift in Sources */,
+				A56F0AC0246F36AC00BD1CE0 /* UIImageView+LoadURL.swift in Sources */,
 				A56F0A94246EF18B00BD1CE0 /* EventListViewController.swift in Sources */,
-				A56F0AB3246F0CE700BD1CE0 /* Date+Extensions.swift in Sources */,
+				A56F0AB3246F0CE700BD1CE0 /* Date+ToString.swift in Sources */,
 				A56F0ABC246F1DA700BD1CE0 /* CheckInModel.swift in Sources */,
-				A56F0AAB246EF49000BD1CE0 /* NetworkManager.swift in Sources */,
+				A56F0AAB246EF49000BD1CE0 /* APIManager.swift in Sources */,
 				A56F0AB6246F0F2700BD1CE0 /* EventListTableViewCell.swift in Sources */,
-				A56F0ABA246F12AC00BD1CE0 /* Double+Extensions.swift in Sources */,
+				A56F0AD02474675100BD1CE0 /* APIMethods.swift in Sources */,
+				A56F0ABA246F12AC00BD1CE0 /* Double+ToCurrency.swift in Sources */,
 				A56F0AA8246EF3A700BD1CE0 /* EventListViewModel.swift in Sources */,
 				A56F0A90246EF18B00BD1CE0 /* AppDelegate.swift in Sources */,
+				A56F0ACC2474654C00BD1CE0 /* CheckInService.swift in Sources */,
 				A56F0AAE246EF5EC00BD1CE0 /* EventModel.swift in Sources */,
-				A56F0AC7246F4BDE00BD1CE0 /* String+Extensions.swift in Sources */,
+				A56F0AC7246F4BDE00BD1CE0 /* String+ValidEmail.swift in Sources */,
 				A56F0AB0246F037000BD1CE0 /* EventDetailViewController.swift in Sources */,
 				A56F0A92246EF18B00BD1CE0 /* SceneDelegate.swift in Sources */,
 				A56F0ACA246F62F100BD1CE0 /* BaseViewController.swift in Sources */,
