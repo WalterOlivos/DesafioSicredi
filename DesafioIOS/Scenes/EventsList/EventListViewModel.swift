@@ -20,7 +20,7 @@ class EventListViewModel {
     var events: [EventModel] = []
     
     func fetchEvents() {
-        NetworkManager.loadEventList { events, error  in
+        APIManager.EventListRequests.loadEventList { events, error  in
             guard let error = error else {
                 if let events = events {
                     self.events = events

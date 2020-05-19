@@ -24,7 +24,7 @@ class CheckInViewModel {
         
         let checkInBody = CheckInModel(eventId: event.id, name: name, email: email)
         
-        NetworkManager.postCheckIn(body: checkInBody) { (error) in
+        APIManager.CheckInRequests.postCheckIn(body: checkInBody) { (error) in
             guard let error = error else {
                 self.delegate?.checkInViewModelDidCheckIn()
                 return
